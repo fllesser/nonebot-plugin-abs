@@ -65,6 +65,9 @@ async def test_text_to_emoji():
     test_texts = [
         "这样吧，进去给你安排个顶 级 账 号待遇玩，一个名额了，别的玩 家要充前才能拿到手的，你进去服利领到手软我回来了",
         "还没到8月",
+        "愤怒怒",
+        "分奴",
     ]
     for text in test_texts:
-        logger.info(text_to_emoji(text))
+        res = text_to_emoji(text)
+        logger.info(f"{text} -> {res}")

@@ -40,13 +40,14 @@ def text_to_emoji(text: str) -> str:
     word_lst: list[str] = jieba.lcut(text)
 
     for idx, word in enumerate(word_lst):
+        logger.debug(f"word: {word}")
         if word in emoji_chinese:
             word_lst[idx] = emoji_chinese[word]
             logger.debug(f"[1]中文表情: {word} -> {emoji_chinese[word]}")
         elif word in emoji_english:
             word_lst[idx] = emoji_english[word]
             logger.debug(f"[1]英文表情: {word} -> {emoji_english[word]}")
-        elif (word_pinyin := pinyin.get(word)) in emoji_pinyin:
+        elif (word_pinyin := pinyin.get(word, format="strip")) in emoji_pinyin:
             word_lst[idx] = emoji_pinyin[word_pinyin]
             logger.debug(f"[1]拼音表情: {word_pinyin} -> {emoji_pinyin[word_pinyin]}")
         else:
