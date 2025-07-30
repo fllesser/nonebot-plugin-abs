@@ -63,8 +63,7 @@ async def test_text_to_emoji():
     from nonebot_plugin_abs import text_to_emoji
 
     test_texts = [
-        "标题: 神丨印王座链接: https://pan.quark.cn/s/240fe547007c更新时间: 2025-07-23 19:53:48",
-        "我回来了",
+        "这样吧，进去给你安排个顶 级 账 号待遇玩，一个名额了，别的玩 家要充前才能拿到手的，你进去服利领到手软我回来了",
         "还没到8月",
     ]
     for text in test_texts:
