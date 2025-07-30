@@ -22,4 +22,4 @@ async def after_nonebot_init(after_nonebot_init: None):
     driver.register_adapter(OnebotV11Adapter)
 
     # 加载插件
-    nonebot.load_from_toml("pyproject.toml")
+    nonebot.logger.info("")
