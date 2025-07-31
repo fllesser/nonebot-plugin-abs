@@ -37,8 +37,7 @@ def text_to_emoji(text: str) -> str:
     import jieba
     import pinyin
 
-    from .emoji_cn import emoji_cn, emoji_pinyin
-    from .emoji_en import emoji_en
+    from .emoji import emoji_cn, emoji_en, emoji_pinyin
 
     word_lst = jieba.lcut(text)
     emoji_str = ""
