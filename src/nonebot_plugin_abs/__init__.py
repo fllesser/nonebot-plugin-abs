@@ -1,4 +1,3 @@
-from arclet.alconna import Alconna
 from nonebot import logger, require
 from nonebot.plugin import PluginMetadata, inherit_supported_adapters
 
@@ -14,12 +13,13 @@ __plugin_meta__ = PluginMetadata(
     extra={"author": "fllesser <fllesser@gmail.com>"},
 )
 
+from arclet.alconna import Alconna, StrMulti
 from nonebot.matcher import Matcher
 from nonebot_plugin_alconna import Args, Match, on_alconna
 from nonebot_plugin_alconna.builtins.extensions.reply import ReplyMergeExtension
 
 abs = on_alconna(
-    Alconna("abs", Args["content", str]),
+    Alconna("abs", Args["content", StrMulti]),
     aliases={"抽象"},
     priority=5,
     block=True,
