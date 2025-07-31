@@ -43,6 +43,7 @@ async def test_abs(app: App):
     from nonebot.adapters.onebot.v11 import Adapter as OnebotV11Adapter
 
     assert require("nonebot_plugin_abs")
+
     from nonebot_plugin_abs import abs
 
     # event = make_onebot_msg(Message("/abs xiao"))
@@ -53,7 +54,7 @@ async def test_abs(app: App):
     #     ctx.should_call_send(event, "😁", result=None, bot=bot)
     #     ctx.should_finished()
 
-    event = make_onebot_msg(Message("/abs"))
+    event = make_onebot_msg(Message("/abs xixi"))
     async with app.test_matcher(abs) as ctx:
         adapter = nonebot.get_adapter(OnebotV11Adapter)
         bot = ctx.create_bot(base=Bot, adapter=adapter)
@@ -67,10 +68,12 @@ async def test_text_to_emoji():
     from nonebot_plugin_abs import text_to_emoji
 
     test_texts = [
-        "这样吧，进去给你安排个顶 级 账 号待遇玩，一个名额了，别的玩 家要充前才能拿到手的，你进去服利领到手软我回来了",
+        "这样吧，进去给你安排个顶 级 账 号待遇玩，一个名额了，别的玩 家要充前才能拿到手的，你进去服利领到手软",
         "还没到8月",
         "愤怒怒",
         "分奴",
+        "england",
+        "cn",
     ]
     for text in test_texts:
         res = text_to_emoji(text)

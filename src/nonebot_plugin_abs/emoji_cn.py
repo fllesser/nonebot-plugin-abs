@@ -1,4 +1,4 @@
-emoji_chinese = {
+emoji_cn = {
     "笑": "😁",
     "笑哭": "😂",
     "色": "😍",
@@ -972,6 +972,7 @@ emoji_chinese = {
     "透你妈": "tony🐎",
     "蚊子": "🦟",
 }
+
 emoji_pinyin = {
     "xiao": "😁",
     "xiaoku": "😂",
@@ -1877,35 +1878,4 @@ emoji_pinyin = {
     "sunxiaochuan": "孙🐶",
     "tounima": "tony🐎",
     "wenzi": "🦟",
-}
-
-
-emoji_english = {
-    "chinese": "🇨🇳",
-    "american": "🇺🇸",
-    "japanese": "🇯🇵",
-    "korean": "🇰🇷",
-    "indian": "🇮🇳",
-    "indonesian": "🇮🇩",
-    "malaysian": "🇲🇾",
-    "philippine": "🇵🇭",
-    "singaporean": "🇸🇬",
-    "thai": "🇹🇭",
-    "vietnamese": "🇻🇳",
-    "english": "🇬🇧",
-    "french": "🇫🇷",
-    "german": "🇩🇪",
-    "italian": "🇮🇹",
-    "portuguese": "🇵🇹",
-    "russian": "🇷🇺",
-    "spanish": "🇪🇸",
-    "turkish": "🇹🇷",
-    "arabic": "🇸🇦",
-    "persian": "🇮🇷",
-    "hebrew": "🇮🇱",
-    "kurdish": "🇮🇶",
-    "turkmen": "🇹🇲",
-    "uzbek": "🇺🇿",
-    "tajik": "🇹🇯",
-    "kyrgyz": "🇰🇬",
 }

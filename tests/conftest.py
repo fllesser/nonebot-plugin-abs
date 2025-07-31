@@ -20,6 +20,3 @@ async def after_nonebot_init(after_nonebot_init: None):
     # 加载适配器
     driver = nonebot.get_driver()
     driver.register_adapter(OnebotV11Adapter)
-
-    # 加载插件
-    nonebot.logger.info("")
