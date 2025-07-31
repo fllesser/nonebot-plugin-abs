@@ -35,7 +35,7 @@ async def test_abs(app: App):
     from nonebot.adapters.onebot.v11 import Adapter as OnebotV11Adapter
     from nonebot.adapters.onebot.v11.event import Reply, Sender
 
-    assert require("nonebot_plugin_abs")
+    require("nonebot_plugin_abs")
 
     from nonebot_plugin_abs import abs
 
@@ -55,9 +55,11 @@ async def test_abs(app: App):
     async with app.test_matcher(abs) as ctx:
         adapter = nonebot.get_adapter(OnebotV11Adapter)
         bot = ctx.create_bot(base=Bot, adapter=adapter)
+
         ctx.receive_event(bot, event1)
         ctx.should_call_send(event1, "😁", result=None, bot=bot)
         ctx.should_finished()
+
         ctx.receive_event(bot, event2)
         ctx.should_call_send(event2, "🇨🇳💧👿💧😄👿😁🌶️", result=None, bot=bot)
         ctx.should_finished()

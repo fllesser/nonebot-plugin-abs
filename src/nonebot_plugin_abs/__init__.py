@@ -33,12 +33,13 @@ async def _(matcher: Matcher, content: Match[str]):
     await matcher.finish(text_to_emoji(content.result))
 
 
+import jieba
+import pinyin
+
+from .emoji import emoji_cn, emoji_en, emoji_pinyin
+
+
 def text_to_emoji(text: str) -> str:
-    import jieba
-    import pinyin
-
-    from .emoji import emoji_cn, emoji_en, emoji_pinyin
-
     word_lst = jieba.lcut(text)
     emoji_str = ""
     for word in word_lst:
