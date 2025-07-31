@@ -39,6 +39,8 @@ abs = on_command("abs", aliases={"抽象"}, priority=5, block=True)
 
 @abs.handle()
 async def _(msg: UniMsg, state: T_State, arg: Message = CommandArg()):
+    for seg in msg:
+        logger.info(f"seg: {seg}")
     if msg.has(Reply):
         reply = msg[Reply, 0]
         logger.debug(f"reply: {reply}")
