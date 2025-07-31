@@ -30,9 +30,7 @@ abs = on_alconna(
 
 @abs.handle()
 async def _(matcher: Matcher, content: Match[str]):
-    logger.info(f"content: {content}")
-    if content.result:
-        await matcher.finish(text_to_emoji(content.result))
+    await matcher.finish(text_to_emoji(content.result))
 
 
 def text_to_emoji(text: str) -> str:
