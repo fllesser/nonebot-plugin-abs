@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-abs"
-version = "0.1.1"
+version = "0.1.2"
 description = "插件描述"
 readme = "README.md"
 authors = [{ name = "fllesser", email = "fllesser@gmail.com" }]
@@ -18,12 +18,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = [
-  "nonebot2[fastapi]>=2.3.0,<3.0.0",
-  "ruff>=0.12.7,<1.0.0",
-  # "nonemoji>=0.1.4,<1.0.0", # 推荐全局安装 pipx install nonemoji
-  # "pre-commit>=4.1.0",      # 推荐全局安装 pipx install pre-commit
-]
+dev = ["nonebot2[fastapi]>=2.3.0,<3.0.0", "ruff>=0.12.7,<1.0.0"]
 
 test = [
   "nonebot2[fastapi]>=2.3.0,<3.0.0",
