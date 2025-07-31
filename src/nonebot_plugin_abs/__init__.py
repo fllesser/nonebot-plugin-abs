@@ -48,8 +48,8 @@ def text_to_emoji(text: str) -> str:
             word_lst[idx] = emoji_cn[word]
             logger.debug(f"[1] 中文 {word} ->  {emoji_cn[word]}")
         elif word in emoji_en:
-            word_lst[idx] = emoji_en[word]
-            logger.debug(f"[1] 英文 {word} -> {emoji_en[word]}")
+            word_lst[idx] = emoji_en[word]["char"]
+            logger.debug(f"[1] 英文 {word} -> {emoji_en[word]['char']}")
         elif (word_pinyin := pinyin.get(word, format="strip")) in emoji_pinyin:
             word_lst[idx] = emoji_pinyin[word_pinyin]
             logger.debug(f"[1] 拼音 {word_pinyin} -> {emoji_pinyin[word_pinyin]}")
