@@ -5,9 +5,9 @@ from nonebot.plugin import PluginMetadata, inherit_supported_adapters
 require("nonebot_plugin_alconna")
 
 __plugin_meta__ = PluginMetadata(
-    name="",
-    description="描述",
-    usage="用法",
+    name="抽象",
+    description="抽象",
+    usage="abs 愤怒的分奴",
     type="application",  # library
     homepage="https://github.com/fllesser/nonebot-plugin-abs",
     supported_adapters=inherit_supported_adapters("nonebot_plugin_alconna"),
