@@ -39,7 +39,7 @@ async def test_abs(app: App):
 
     from nonebot_plugin_abs import abs
 
-    event1 = make_onebot_msg(Message("/abs xiao"))
+    event1 = make_onebot_msg(Message("/abs xiao笑smile"))
 
     event2 = make_onebot_msg(Message("/abs"))
 
@@ -57,7 +57,7 @@ async def test_abs(app: App):
         bot = ctx.create_bot(base=Bot, adapter=adapter)
 
         ctx.receive_event(bot, event1)
-        ctx.should_call_send(event1, "😁", result=None, bot=bot)
+        ctx.should_call_send(event1, "😁😁😄", result=None, bot=bot)
         ctx.should_finished()
 
         ctx.receive_event(bot, event2)
