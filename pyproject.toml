@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-abs"
-version = "0.2.1"
+version = "0.2.2"
 description = "插件描述"
 readme = "README.md"
 authors = [{ name = "fllesser", email = "fllesser@gmail.com" }]
@@ -13,7 +13,7 @@ dependencies = [
   # "nonebot-plugin-apscheduler>=0.5.0,<1.0.0",
   # "nonebot-plugin-waiter>=0.8.1,<1.0.0",
   # "nonebot-plugin-uninfo>=0.9.0,<1.0.0",
-  "nonebot-plugin-alconna>=0.59.1,<1.0.0",
+  "nonebot-plugin-alconna>=0.59.2,<1.0.0",
   "pinyin>=0.4.0",
 ]
 
