@@ -1,4 +1,4 @@
-emoji_cn = {
+emoji_zh = {
     "笑": "😁",
     "笑哭": "😂",
     "色": "😍",
@@ -973,7 +973,7 @@ emoji_cn = {
     "蚊子": "🦟",
 }
 
-emoji_pinyin = {
+emoji_py = {
     "xiao": "😁",
     "xiaoku": "😂",
     "se": "😍",
@@ -1879,6 +1879,8 @@ emoji_pinyin = {
     "tounima": "tony🐎",
     "wenzi": "🦟",
 }
+
+emoji_num = {"0": "0️⃣", "1": "1️⃣", "2": "2️⃣", "3": "3️⃣", "4": "4️⃣", "5": "5️⃣", "6": "6️⃣", "7": "7️⃣", "8": "8️⃣", "9": "9️⃣"}
 
 emoji_en = {
     "grinning": {"keywords": ["face", "smile", "happy", "joy", "笑"], "char": "😀", "category": "people"},

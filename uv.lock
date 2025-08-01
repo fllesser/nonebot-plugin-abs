@@ -28,16 +28,16 @@ wheels = [
 
 [[package]]
 name = "arclet-alconna"
-version = "1.8.38"
+version = "1.8.40"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "nepattern" },
     { name = "tarina" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c5/d8/d44eb4ae3bae3112a51a651f99907132feee332df7f68efd2174d7e6a868/arclet_alconna-1.8.38.tar.gz", hash = "sha256:6e85d60c7a3d00669169b18a2b375fbcbb757b8495ccf2088c7a1495139affe0", size = 80390, upload-time = "2025-06-13T12:22:42.711Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/85/16/c1010fe78c8caa6959b3018a27509250e5b4f27c213351254025f6359626/arclet_alconna-1.8.40.tar.gz", hash = "sha256:073155c8b098530590bd0d07164f92bc3d5e1d8da6dfb4bcc0539abbe293e2ca", size = 80609, upload-time = "2025-07-31T14:05:04.635Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/86/5a/b3335347e4799f4434cfcbf7cdaee87d80aef9e0d41c8797dbca702da7b4/arclet_alconna-1.8.38-py3-none-any.whl", hash = "sha256:ffa3e78097cf298697420b6e8e7fd90922863198056761db8a894edd63a02021", size = 76973, upload-time = "2025-06-13T12:22:41.322Z" },
+    { url = "https://files.pythonhosted.org/packages/01/e9/d7f9917f9911ca0f49bb38723d2bcbe0cfd4594409ca30d3844c998d3a1b/arclet_alconna-1.8.40-py3-none-any.whl", hash = "sha256:ad41b9576be4f4fa0330c413c3bc662b8a41ab193e6c5d29386ed6bcff7bf91b", size = 77146, upload-time = "2025-07-31T14:05:03.204Z" },
 ]
 
 [[package]]
@@ -484,7 +484,7 @@ wheels = [
 
 [[package]]
 name = "nonebot-plugin-abs"
-version = "0.2.1"
+version = "0.2.2"
 source = { editable = "." }
 dependencies = [
     { name = "jieba" },
@@ -509,7 +509,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "jieba", specifier = ">=0.42.1" },
-    { name = "nonebot-plugin-alconna", specifier = ">=0.59.1,<1.0.0" },
+    { name = "nonebot-plugin-alconna", specifier = ">=0.59.2,<1.0.0" },
     { name = "nonebot2", specifier = ">=2.3.0,<3.0.0" },
     { name = "pinyin", specifier = ">=0.4.0" },
 ]
@@ -529,7 +529,7 @@ test = [
 
 [[package]]
 name = "nonebot-plugin-alconna"
-version = "0.59.1"
+version = "0.59.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "arclet-alconna" },
@@ -540,9 +540,9 @@ dependencies = [
     { name = "nonebot2" },
     { name = "tarina" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b8/60/c667dec37ecc3d5462ed41cca08d96ae76ac51cffbc02d041fa7b88adc77/nonebot_plugin_alconna-0.59.1.tar.gz", hash = "sha256:2f45d0fe5133d5484e6d575ae80d39d5e646d5b01c21b9a2e07093ad4c337e4a", size = 152458, upload-time = "2025-07-25T15:25:45.153Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/8a/8f/b3991956b789c77c02c3a8dac86a9d2f2c83b7eefe59c253f774d914b775/nonebot_plugin_alconna-0.59.2.tar.gz", hash = "sha256:b2262641319eb88299cf9c123d530cbd3358d09524a6b2447586030413d34aa4", size = 153152, upload-time = "2025-07-31T16:04:24.407Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/aa/aa/a2c254746e0a5302a86c15cd20c33f55b64e2cea1a59a5ed2dd3b4cda801/nonebot_plugin_alconna-0.59.1-py3-none-any.whl", hash = "sha256:08648607fc70b49fd4279fe006736f3de0a32f71ef21a166332c70c6a1080beb", size = 209818, upload-time = "2025-07-25T15:25:43.617Z" },
+    { url = "https://files.pythonhosted.org/packages/a5/a7/e8bb91e152f91ab48100bd89411bdffff40aa7b45cfafe586c2c28fb0a20/nonebot_plugin_alconna-0.59.2-py3-none-any.whl", hash = "sha256:7a8cedcf73cb9c21c88b489ca41607feec3fa477d045db7761d5c36e0d28e1c9", size = 210279, upload-time = "2025-07-31T16:04:23.228Z" },
 ]
 
 [[package]]
