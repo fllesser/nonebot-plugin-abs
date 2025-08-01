@@ -54,6 +54,9 @@ def text_to_emoji(text: str) -> str:
             emoji_str += emoji_pinyin[word_pinyin]
             logger.debug(f"[1] 拼音 {word_pinyin} -> {emoji_pinyin[word_pinyin]}")
         else:
+            if len(word) == 1:
+                emoji_str += word
+                continue
             for char in word:
                 if (char_pinyin := pinyin.get(char, format="strip")) in emoji_pinyin:
                     emoji_str += emoji_pinyin[char_pinyin]
