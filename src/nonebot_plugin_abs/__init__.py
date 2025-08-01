@@ -33,6 +33,8 @@ async def _(matcher: Matcher, content: Match[str]):
     await matcher.finish(text_to_emoji(content.result))
 
 
+import re
+
 import jieba
 import pinyin
 
@@ -40,28 +42,35 @@ from .emoji import emoji_cn, emoji_en, emoji_pinyin
 
 
 def text_to_emoji(text: str) -> str:
-    word_lst = jieba.lcut(text)
+    word_lst: list[str] = jieba.lcut(text)
     emoji_str = ""
     for word in word_lst:
-        # logger.debug(f"word: {word}")
-        if word in emoji_cn:
-            emoji_str += emoji_cn[word]
-            logger.debug(f"[1] 中文 {word} ->  {emoji_cn[word]}")
-        elif word in emoji_en:
-            emoji_str += emoji_en[word]["char"]
-            logger.debug(f"[1] 英文 {word} -> {emoji_en[word]['char']}")
-        elif (word_pinyin := pinyin.get(word, format="strip")) in emoji_pinyin:
-            emoji_str += emoji_pinyin[word_pinyin]
-            logger.debug(f"[1] 拼音 {word_pinyin} -> {emoji_pinyin[word_pinyin]}")
-        else:
-            if len(word) == 1:
+        if bool(re.fullmatch(r"^[a-zA-Z0-9]+$", word)):
+            if word in emoji_en:
+                emoji_str += emoji_en[word]["char"]
+                logger.debug(f"[en] 英文 {word} -> {emoji_en[word]['char']}")
+            elif word in emoji_pinyin:
+                emoji_str += emoji_pinyin[word]
+                logger.debug(f"[en] 拼音 {word} -> {emoji_pinyin[word]}")
+            else:
                 emoji_str += word
-                continue
-            for char in word:
-                if (char_pinyin := pinyin.get(char, format="strip")) in emoji_pinyin:
-                    emoji_str += emoji_pinyin[char_pinyin]
-                    logger.debug(f"[2] 拼音 {char_pinyin} -> {emoji_pinyin[char_pinyin]}")
-                else:
-                    emoji_str += char
+                logger.debug(f"[en] 其他 {word} -> {word}")
+        else:
+            if word in emoji_cn:
+                emoji_str += emoji_cn[word]
+                logger.debug(f"[zh] 中文 {word} -> {emoji_cn[word]}")
+            elif (word_pinyin := pinyin.get(word, format="strip")) in emoji_pinyin:
+                emoji_str += emoji_pinyin[word_pinyin]
+                logger.debug(f"[zh] 拼音 {word_pinyin} -> {emoji_pinyin[word_pinyin]}")
+            else:
+                if len(word) == 1:
+                    emoji_str += word
+                    continue
+                for char in word:
+                    if (char_pinyin := pinyin.get(char, format="strip")) in emoji_pinyin:
+                        emoji_str += emoji_pinyin[char_pinyin]
+                        logger.debug(f"[zh] 拼音 {char_pinyin} -> {emoji_pinyin[char_pinyin]}")
+                    else:
+                        emoji_str += char
 
     return emoji_str
