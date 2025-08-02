@@ -14,11 +14,10 @@ __plugin_meta__ = PluginMetadata(
 )
 
 from arclet.alconna import Alconna, StrMulti
-from nonebot.matcher import Matcher
 from nonebot_plugin_alconna import Args, Match, on_alconna
 from nonebot_plugin_alconna.builtins.extensions.reply import ReplyMergeExtension
 
-from .data_source import text_to_emoji
+from .data_source import text2emoji
 
 abs = on_alconna(
     Alconna("abs", Args["content", StrMulti]),
@@ -31,5 +30,5 @@ abs = on_alconna(
 
 
 @abs.handle()
-async def _(matcher: Matcher, content: Match[str]):
-    await matcher.finish(text_to_emoji(content.result))
+async def _(content: Match[str]):
+    await abs.finish(text2emoji(content.result))

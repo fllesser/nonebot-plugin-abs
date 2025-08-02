@@ -9,19 +9,19 @@ from .emoji import emoji_en, emoji_num, emoji_py, emoji_zh
 jieba.initialize()
 
 
-def text_to_emoji(text: str) -> str:
+def text2emoji(text: str) -> str:
     word_lst: list[str] = jieba.lcut(text)
     emoji_str = ""
     for word in word_lst:
         if bool(re.fullmatch(r"^[a-zA-Z0-9]+$", word)):
-            emoji_str += en_to_emoji(word)
+            emoji_str += en2emoji(word)
         else:
-            emoji_str += zh_to_emoji(word)
+            emoji_str += zh2emoji(word)
 
     return emoji_str
 
 
-def en_to_emoji(en_num: str) -> str:
+def en2emoji(en_num: str) -> str:
     if en_num in emoji_en:
         logger.debug(f"[en] 英文 {en_num} -> {emoji_en[en_num]['char']}")
         return emoji_en[en_num]["char"]
@@ -31,17 +31,17 @@ def en_to_emoji(en_num: str) -> str:
         return emoji_py[en_py]
 
     else:
-        logger.debug(f"[en] {en_num}")
         en_in_emoji = ""
         for char in en_num:
             if char.isdigit():
                 en_in_emoji += emoji_num[char]
             else:
                 en_in_emoji += char
+        logger.debug(f"[en] {en_num} -> {en_in_emoji}")
         return en_in_emoji
 
 
-def zh_to_emoji(zh: str) -> str:
+def zh2emoji(zh: str) -> str:
     if zh in emoji_zh:
         logger.debug(f"[zh] 中文 {zh} -> {emoji_zh[zh]}")
         return emoji_zh[zh]
@@ -61,6 +61,7 @@ def zh_to_emoji(zh: str) -> str:
                 zh_in_emoji += emoji_py[char_py]
             else:
                 zh_in_emoji += char
+        logger.debug(f"[zh] {zh} -> {zh_in_emoji}")
         return zh_in_emoji
 
 
