@@ -6,6 +6,8 @@ import pinyin
 
 from .emoji import emoji_en, emoji_num, emoji_py, emoji_zh
 
+jieba.initialize()
+
 
 def text_to_emoji(text: str) -> str:
     word_lst: list[str] = jieba.lcut(text)
