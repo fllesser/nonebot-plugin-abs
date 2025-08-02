@@ -1,12 +1,17 @@
 import re
 
 import jieba
-from nonebot import logger
+from nonebot import get_driver, logger
 import pinyin
 
 from .emoji import emoji_en, emoji_num, emoji_py, emoji_zh
 
-jieba.initialize()
+
+@get_driver().on_startup
+async def init_jieba():
+    import asyncio
+
+    await asyncio.to_thread(jieba.initialize)
 
 
 def text2emoji(text: str) -> str:
