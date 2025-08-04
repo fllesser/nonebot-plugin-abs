@@ -27,13 +27,13 @@ def text2emoji(text: str) -> str:
 
 
 def en2emoji(en_num: str) -> str:
-    if en_num in emoji_en:
-        logger.debug(f"[en] 英文 {en_num} -> {emoji_en[en_num]['char']}")
-        return emoji_en[en_num]["char"]
+    if (item := emoji_en.get(en_num)) and (emj := item.get("char")):
+        logger.debug(f"[en] 英文 {en_num} -> {emj}")
+        return emj
 
-    elif (en_py := pinyin.get(en_num, format="strip")) in emoji_py:
-        logger.debug(f"[en] 拼音 {en_py} -> {emoji_py[en_py]}")
-        return emoji_py[en_py]
+    elif emj := emoji_py.get(en_num):
+        logger.debug(f"[en] 拼音 {en_num} -> {emj}")
+        return emj
 
     else:
         en_in_emoji = ""
@@ -47,13 +47,13 @@ def en2emoji(en_num: str) -> str:
 
 
 def zh2emoji(zh: str) -> str:
-    if zh in emoji_zh:
-        logger.debug(f"[zh] 中文 {zh} -> {emoji_zh[zh]}")
-        return emoji_zh[zh]
+    if emj := emoji_zh.get(zh):
+        logger.debug(f"[zh] 中文 {zh} -> {emj}")
+        return emj
 
-    elif (zh_py := pinyin.get(zh, format="strip")) in emoji_py:
-        logger.debug(f"[zh] 拼音 {zh_py} -> {emoji_py[zh_py]}")
-        return emoji_py[zh_py]
+    elif (zh_py := pinyin.get(zh, format="strip")) and (emj := emoji_py.get(zh_py)):
+        logger.debug(f"[zh] 拼音 {zh_py} -> {emj}")
+        return emj
 
     else:
         if len(zh) == 1:
@@ -61,9 +61,10 @@ def zh2emoji(zh: str) -> str:
 
         zh_in_emoji = ""
         for char in zh:
-            if (char_py := pinyin.get(char, format="strip")) in emoji_py:
-                logger.debug(f"[zh] 拼音 {char_py} -> {emoji_py[char_py]}")
-                zh_in_emoji += emoji_py[char_py]
+            char_py = pinyin.get(char, format="strip")
+            if emj := emoji_py.get(char_py):
+                logger.debug(f"[zh] 拼音 {char_py} -> {emj}")
+                zh_in_emoji += emj
             else:
                 zh_in_emoji += char
         logger.debug(f"[zh] {zh} -> {zh_in_emoji}")
