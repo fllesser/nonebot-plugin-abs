@@ -4,7 +4,7 @@ import jieba
 from nonebot import get_driver, logger
 import pinyin
 
-from .emoji import emoji_en, emoji_num, emoji_py, emoji_zh
+from .emoji import en_emj_map, num_emj_map, py_emj_map, zh_emj_map
 
 
 @get_driver().on_startup
@@ -27,18 +27,18 @@ def text2emoji(text: str) -> str:
 
 
 def en2emoji(en_num: str) -> str:
-    if emj := emoji_en.get(en_num):
+    if emj := en_emj_map.get(en_num):
         logger.debug(f"[en] 英文 {en_num} -> {emj}")
         return emj
 
-    elif emj := emoji_py.get(en_num):
+    elif emj := py_emj_map.get(en_num):
         logger.debug(f"[en] 拼音 {en_num} -> {emj}")
         return emj
 
     else:
         emjs = ""
         for char in en_num:
-            if char.isdigit() and (emj := emoji_num.get(char)):
+            if char.isdigit() and (emj := num_emj_map.get(char)):
                 emjs += emj
                 logger.debug(f"[en] 数字 {char} -> {emj}")
             else:
@@ -49,11 +49,11 @@ def en2emoji(en_num: str) -> str:
 
 
 def zh2emoji(zh: str) -> str:
-    if emj := emoji_zh.get(zh):
+    if emj := zh_emj_map.get(zh):
         logger.debug(f"[zh] 中文 {zh} -> {emj}")
         return emj
 
-    elif (zh_py := pinyin.get(zh, format="strip")) and (emj := emoji_py.get(zh_py)):
+    elif (zh_py := pinyin.get(zh, format="strip")) and (emj := py_emj_map.get(zh_py)):
         logger.debug(f"[zh] 拼音 {zh} -> {zh_py} -> {emj}")
         return emj
 
@@ -65,7 +65,7 @@ def zh2emoji(zh: str) -> str:
         emjs = ""
         for char in zh:
             char_py = pinyin.get(char, format="strip")
-            if emj := emoji_py.get(char_py):
+            if emj := py_emj_map.get(char_py):
                 emjs += emj
                 logger.debug(f"[zh] 拼音 {char} -> {char_py} -> {emj}")
             else:
