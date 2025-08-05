@@ -49,7 +49,7 @@ async def test_abs(app: App):
         message_id=123456233,
         real_id=12345623,
         sender=Sender(user_id=987654321, nickname="xiaoming"),
-        message=Message("cn的愤怒的smile分奴xiao了"),
+        message=Message("cn的愤怒的smile分奴xiao了封神3y3普"),
     )
 
     async with app.test_matcher(abs) as ctx:
@@ -61,5 +61,5 @@ async def test_abs(app: App):
         ctx.should_finished()
 
         ctx.receive_event(bot, event2)
-        ctx.should_call_send(event2, "🇨🇳💧👿💧😄👿😁🌶️", result=None, bot=bot)
+        ctx.should_call_send(event2, "🇨🇳💧👿💧😄👿😁🌶️🐝🈸3️⃣y3️⃣普", result=None, bot=bot)
         ctx.should_finished()

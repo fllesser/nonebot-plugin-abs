@@ -38,11 +38,13 @@ def en2emoji(en_num: str) -> str:
     else:
         emjs = ""
         for char in en_num:
-            if char.isdigit():
-                emjs += emoji_num[char]
+            if char.isdigit() and (emj := emoji_num.get(char)):
+                emjs += emj
+                logger.debug(f"[en] 数字 {char} -> {emj}")
             else:
                 emjs += char
-        logger.debug(f"[en] {en_num} -> {emjs}")
+                logger.debug(f"[en] 忽略 {char}")
+        # logger.debug(f"[en] 其他 {en_num} -> {emjs}")
         return emjs
 
 
@@ -52,22 +54,24 @@ def zh2emoji(zh: str) -> str:
         return emj
 
     elif (zh_py := pinyin.get(zh, format="strip")) and (emj := emoji_py.get(zh_py)):
-        logger.debug(f"[zh] 拼音 {zh_py} -> {emj}")
+        logger.debug(f"[zh] 拼音 {zh} -> {zh_py} -> {emj}")
         return emj
 
     else:
         if len(zh) == 1:
+            logger.debug(f"[zh] 忽略 {zh}")
             return zh
 
         emjs = ""
         for char in zh:
             char_py = pinyin.get(char, format="strip")
             if emj := emoji_py.get(char_py):
-                logger.debug(f"[zh] 拼音 {char_py} -> {emj}")
                 emjs += emj
+                logger.debug(f"[zh] 拼音 {char} -> {char_py} -> {emj}")
             else:
                 emjs += char
-        logger.debug(f"[zh] {zh} -> {emjs}")
+                logger.debug(f"[zh] 忽略 {char}")
+        # logger.debug(f"[zh] 单合 {zh} -> {emjs}")
         return emjs
 
 
