@@ -484,7 +484,7 @@ wheels = [
 
 [[package]]
 name = "nonebot-plugin-abs"
-version = "0.3.8"
+version = "0.3.9"
 source = { editable = "." }
 dependencies = [
     { name = "jieba" },
@@ -509,7 +509,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "jieba", specifier = ">=0.42.1" },
-    { name = "nonebot-plugin-alconna", specifier = ">=0.59.3,<1.0.0" },
+    { name = "nonebot-plugin-alconna", specifier = ">=0.59.4,<1.0.0" },
     { name = "nonebot2", specifier = ">=2.3.0,<3.0.0" },
     { name = "pinyin", specifier = ">=0.4.0" },
 ]
@@ -529,7 +529,7 @@ test = [
 
 [[package]]
 name = "nonebot-plugin-alconna"
-version = "0.59.3"
+version = "0.59.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "arclet-alconna" },
@@ -540,9 +540,9 @@ dependencies = [
     { name = "nonebot2" },
     { name = "tarina" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c5/37/5a5ed192fbe477e635278e7762cb48d1d9ae47592b58cfeeb2e91a67a859/nonebot_plugin_alconna-0.59.3.tar.gz", hash = "sha256:c48caba717bfa913fd773cff3741cbb2b00bc6cc180b61e106c6b6194bb9378b", size = 153074, upload-time = "2025-08-01T08:38:20.307Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ff/c9/b8e9d5ac7905c2ba8b6d8b25a9ed826ccd202cff37fc2812c6c7ea1e6f00/nonebot_plugin_alconna-0.59.4.tar.gz", hash = "sha256:bb25ea652e284656a4009ee2dbe9cd5a05e6afa4eaf24b4a2e692d0d83768d43", size = 153252, upload-time = "2025-08-06T07:13:36.338Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d3/62/b8b41371924f0d89b0e28e39d4595517c09d75158ee85fd81c34e7a6f5f8/nonebot_plugin_alconna-0.59.3-py3-none-any.whl", hash = "sha256:c5e132509349433a3f0589a8db465945ff07d2c00362af1ca63561b81dedf522", size = 210287, upload-time = "2025-08-01T08:38:18.877Z" },
+    { url = "https://files.pythonhosted.org/packages/82/c7/47f7f1a88733d6e828d6dd664c2291424e159661891035edff702e7574dd/nonebot_plugin_alconna-0.59.4-py3-none-any.whl", hash = "sha256:a9e17a73b6849bbd3f40f538def6669494bf729bfea87f706a9757885d96a28e", size = 210413, upload-time = "2025-08-06T07:13:34.74Z" },
 ]
 
 [[package]]

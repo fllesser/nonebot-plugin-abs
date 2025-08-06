@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-abs"
-version = "0.3.8"
+version = "0.3.9"
 description = "插件描述"
 readme = "README.md"
 authors = [{ name = "fllesser", email = "fllesser@gmail.com" }]
@@ -8,13 +8,9 @@ urls = { Repository = "https://github.com/fllesser/nonebot-plugin-abs" }
 requires-python = ">=3.10"
 dependencies = [
   "jieba>=0.42.1",
-  "nonebot2>=2.3.0,<3.0.0",
-  # "nonebot-plugin-localstore>=0.7.4,<1.0.0",
-  # "nonebot-plugin-apscheduler>=0.5.0,<1.0.0",
-  # "nonebot-plugin-waiter>=0.8.1,<1.0.0",
-  # "nonebot-plugin-uninfo>=0.9.0,<1.0.0",
-  "nonebot-plugin-alconna>=0.59.3,<1.0.0",
   "pinyin>=0.4.0",
+  "nonebot2>=2.3.0,<3.0.0",
+  "nonebot-plugin-alconna>=0.59.4,<1.0.0",
 ]
 
 [dependency-groups]
@@ -29,7 +25,7 @@ test = [
 ]
 
 [tool.nonebot]
-plugin-dirs = ["src"]
+plugins = ["nonebot_plugin_abs"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

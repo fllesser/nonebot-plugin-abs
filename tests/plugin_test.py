@@ -31,11 +31,8 @@ def make_onebot_msg(message: Message) -> GroupMessageEvent:
 @pytest.mark.asyncio
 async def test_abs(app: App):
     import nonebot
-    from nonebot import require
     from nonebot.adapters.onebot.v11 import Adapter as OnebotV11Adapter
     from nonebot.adapters.onebot.v11.event import Reply, Sender
-
-    require("nonebot_plugin_abs")
 
     from nonebot_plugin_abs import abs
 
