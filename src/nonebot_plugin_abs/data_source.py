@@ -73,16 +73,3 @@ def zh2emoji(zh: str) -> str:
                 logger.debug(f"[zh] 忽略 {char}")
         # logger.debug(f"[zh] 单合 {zh} -> {emjs}")
         return emjs
-
-
-# def py_to_emoji(zh_or_py: str) -> str:
-#     py = pinyin.get(zh_or_py, format="strip")
-#     return emoji_py.get(py, py)
-
-
-# def en_to_emoji(en: str) -> str:
-#     return emoji_en.get(en, {"char": en})["char"]
-
-
-# def zh_to_emoji(zh: str) -> str:
-#     return emoji_zh.get(zh, zh)

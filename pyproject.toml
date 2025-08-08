@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["nonebot2[fastapi]>=2.3.0,<3.0.0", "ruff>=0.12.7,<1.0.0"]
+dev = ["nonebot2[fastapi]>=2.3.0,<3.0.0", "ruff>=0.12.8,<1.0.0"]
 
 test = [
   "nonebot2[fastapi]>=2.3.0,<3.0.0",
