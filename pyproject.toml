@@ -129,12 +129,6 @@ tag = true
 
 
 [[tool.bumpversion.files]]
-filename = "CHANGELOG.md"
-regex = true
-search = "\\[Unreleased\\]: (https://.+?)v{current_version}\\.\\.\\.HEAD"
-replace = "[Unreleased]: \\1v{new_version}...HEAD\n[{new_version}]: \\1v{current_version}...v{new_version}"
-
-[[tool.bumpversion.files]]
 filename = "uv.lock"
 search = "name = \"nonebot-plugin-abs\"\nversion = \"{current_version}\""
 replace = "name = \"nonebot-plugin-abs\"\nversion = \"{new_version}\""
