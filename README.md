@@ -22,15 +22,9 @@
 </a>
 </div>
 
-> [!IMPORTANT]
-> **收藏项目** ～⭐️
-
-<img width="100%" src="https://starify.komoridevs.icu/api/starify?owner=fllesser&repo=nonebot-plugin-abs" alt="starify" />
-
-
 ## 📖 介绍
 
-这里是插件的详细介绍部分
+抽象化消息，将消息中的中文、数字、英文、拼音等转换为对应的emoji
 
 ## 💿 安装
 
@@ -86,7 +80,7 @@
 </details>
 
 <details>
-<summary>使用 [nbr](https://github.com/fllesser/nbr) 安装(使用 uv 管理依赖可用)</summary>
+<summary>使用 nbr(https://github.com/fllesser/nbr) 安装(使用 uv 管理依赖可用)</summary>
 在 nonebot2 项目的根目录下打开命令行, 输入以下指令即可安装
 
     nbr plugin install nonebot-plugin-abs --upgrade
@@ -99,22 +93,11 @@
 
 </details>
 
-
-## ⚙️ 配置
-
-在 nonebot2 项目的`.env`文件中添加下表中的必填配置
-
-| 配置项  | 必填  | 默认值 |   说明   |
-| :-----: | :---: | :----: | :------: |
-| 配置项1 |  是   |   无   | 配置说明 |
-| 配置项2 |  否   |   无   | 配置说明 |
-
 ## 🎉 使用
 ### 指令表
-| 指令  | 权限  | 需要@ | 范围  |   说明   |
-| :---: | :---: | :---: | :---: | :------: |
-| 指令1 | 主人  |  否   | 私聊  | 指令说明 |
-| 指令2 | 群员  |  是   | 群聊  | 指令说明 |
+|    指令    | 权限  | 需要@ | 范围  |    说明    |
+| :--------: | :---: | :---: | :---: | :--------: |
+| abs/抽象化 |   -   |  否   |   -   | 抽象化消息 |
 
 ### 🎨 效果图
-如果有效果图的话
+懒得截捏
