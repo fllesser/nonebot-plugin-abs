@@ -1,43 +1,34 @@
-from nonebot import logger, require
+from nonebot import require
 from nonebot.plugin import PluginMetadata, inherit_supported_adapters
 
-require("nonebot_plugin_uninfo")
 require("nonebot_plugin_alconna")
-require("nonebot_plugin_localstore")
-require("nonebot_plugin_apscheduler")
-from .config import Config
 
 __plugin_meta__ = PluginMetadata(
-    name="名称",
-    description="描述",
-    usage="用法",
+    name="抽象",
+    description="抽象",
+    usage="abs 愤怒的分奴",
     type="application",  # library
     homepage="https://github.com/fllesser/nonebot-plugin-abs",
-    config=Config,
-    supported_adapters=inherit_supported_adapters("nonebot_plugin_alconna", "nonebot_plugin_uninfo"),
-    # supported_adapters={"~onebot.v11"}, # 仅 onebot
-    extra={"author": "fllesser <your@mail.com>"},
+    supported_adapters=inherit_supported_adapters("nonebot_plugin_alconna"),
+    extra={"author": "fllesser <fllesser@gmail.com>"},
 )
 
-from arclet.alconna import Alconna, Args, Arparma, Option, Subcommand
-from nonebot_plugin_alconna import on_alconna
-from nonebot_plugin_alconna.uniseg import UniMessage
+from arclet.alconna import Alconna, StrMulti
+from nonebot_plugin_alconna import Args, Match, on_alconna
+from nonebot_plugin_alconna.builtins.extensions.reply import ReplyMergeExtension
 
-pip = on_alconna(
-    Alconna(
-        "pip",
-        Subcommand(
-            "install",
-            Args["package", str],
-            Option("-r|--requirement", Args["file", str]),
-            Option("-i|--index-url", Args["url", str]),
-        ),
-    )
+from .data_source import text2emoji
+
+abs = on_alconna(
+    Alconna("abs", Args["content", StrMulti]),
+    aliases={"抽象"},
+    priority=5,
+    block=True,
+    extensions=[ReplyMergeExtension()],
+    use_cmd_start=True,
 )
 
 
-@pip.handle()
-async def _(result: Arparma):
-    package: str = result.other_args["package"]
-    logger.info(f"installing {package}")
-    await UniMessage.text(package).send()
+@abs.handle()
+async def _(content: Match[str]):
+    await abs.finish(text2emoji(content.result))

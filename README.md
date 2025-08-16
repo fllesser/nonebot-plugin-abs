@@ -86,7 +86,7 @@
 </details>
 
 <details>
-<summary>使用 nbr(https://github.com/fllesser/nbr) 安装(使用 uv 管理依赖可用)</summary>
+<summary>使用 [nbr](https://github.com/fllesser/nbr) 安装(使用 uv 管理依赖可用)</summary>
 在 nonebot2 项目的根目录下打开命令行, 输入以下指令即可安装
 
     nbr plugin install nonebot-plugin-abs --upgrade
