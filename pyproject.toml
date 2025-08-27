@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-abs"
-version = "1.0.0"
+version = "1.0.1"
 description = "插件描述"
 readme = "README.md"
 authors = [{ name = "fllesser", email = "fllessive@gmail.com" }]
@@ -16,13 +16,11 @@ dependencies = [
 Homepage = "https://github.com/fllesser/nonebot-plugin-abs"
 Repository = "https://github.com/fllesser/nonebot-plugin-abs.git"
 Issues = "https://github.com/fllesser/nonebot-plugin-abs/issues"
-Changelog = "https://github.com/fllesser/nonebot-plugin-abs/blob/main/CHANGELOG.md"
-
 
 [dependency-groups]
 dev = [
   "nonebot2[fastapi]>=2.3.0,<3.0.0",
-  "ruff>=0.12.8,<1.0.0",
+  "ruff>=0.12.10,<1.0.0",
   "nonemoji>=0.1.4,<1.0.0",
   "pre-commit>=4.3.0",
   "bump-my-version>=1.2.1",
@@ -122,7 +120,7 @@ requires = ["uv_build>=0.8.0,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.bumpversion]
-current_version = "1.0.0"
+current_version = "1.0.1"
 commit = true
 message = "🔖 release: bump vesion from {current_version} to {new_version}"
 tag = true

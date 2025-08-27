@@ -976,6 +976,7 @@ zh_emj_map = {
 }
 
 py_emj_map = {
+    "lu": "🦌",
     "xiao": "😁",
     "xiaoku": "😂",
     "se": "😍",
