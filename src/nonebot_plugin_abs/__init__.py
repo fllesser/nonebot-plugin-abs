@@ -10,7 +10,7 @@ __plugin_meta__ = PluginMetadata(
     type="application",  # library
     homepage="https://github.com/fllesser/nonebot-plugin-abs",
     supported_adapters=inherit_supported_adapters("nonebot_plugin_alconna"),
-    extra={"author": "fllesser <fllesser@gmail.com>"},
+    extra={"author": "fllesser <fllessive@gmail.com>"},
 )
 
 from arclet.alconna import Alconna, StrMulti
