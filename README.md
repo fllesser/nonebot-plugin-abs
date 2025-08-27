@@ -84,13 +84,13 @@
 
 [nbr](https://github.com/fllesser/nbr) 是一个基于 uv 的 nb-cli，可以方便地管理 nonebot2
 
-    nbr plugin install nonebot-plugin-abs --upgrade
+    nbr plugin install nonebot-plugin-abs
 使用 **pypi** 源安装
 
-    nbr plugin install nonebot-plugin-abs --upgrade -i "https://pypi.org/simple"
+    nbr plugin install nonebot-plugin-abs -i "https://pypi.org/simple"
 使用**清华源**安装
 
-    nbr plugin install nonebot-plugin-abs --upgrade -i "https://pypi.tuna.tsinghua.edu.cn/simple"
+    nbr plugin install nonebot-plugin-abs -i "https://pypi.tuna.tsinghua.edu.cn/simple"
 
 </details>
 
