@@ -44,7 +44,6 @@ def en2emoji(en_num: str) -> Sequence[str]:
         else:
             emj_lst.append(char)
             logger.debug(f"[en] 忽略 {char}")
-    # logger.debug(f"[en] 其他 {en_num} -> {emjs}")
     return emj_lst
 
 
@@ -70,5 +69,4 @@ def zh2emoji(zh: str) -> Sequence[str]:
         else:
             emj_lst.append(char)
             logger.debug(f"[zh] 忽略 {char}")
-    # logger.debug(f"[zh] 单合 {zh} -> {emjs}")
     return emj_lst
