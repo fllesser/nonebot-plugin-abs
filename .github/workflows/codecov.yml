@@ -31,6 +31,7 @@ jobs:
     env:
       # OS: ${{ matrix.os }}
       PYTHON_VERSION: ${{ matrix.python-version }}
+      UV_NO_SYNC: 1
 
     steps:
       - uses: actions/checkout@v5
@@ -46,7 +47,7 @@ jobs:
         run: uv sync --no-dev
 
       - name: Run Pytest
-        run: uv run --no-sync poe test
+        run: uv run poe test
 
       - name: Upload test results to Codecov
         if: ${{ !cancelled() }}
