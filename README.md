@@ -20,6 +20,9 @@
 <a href="https://results.pre-commit.ci/latest/github/fllesser/nonebot-plugin-abs/master">
     <img src="https://results.pre-commit.ci/badge/github/fllesser/nonebot-plugin-abs/master.svg" alt="pre-commit" />
 </a>
+<a href="https://codecov.io/gh/fllesser/nonebot-plugin-abs" > 
+    <img src="https://codecov.io/gh/fllesser/nonebot-plugin-abs/graph/badge.svg?token=a5wLAgBEYI"/> 
+</a>
 </div>
 
 ## 📖 介绍
