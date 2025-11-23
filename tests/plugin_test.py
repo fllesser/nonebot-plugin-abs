@@ -35,5 +35,7 @@ async def test_abs(app: App):
         ctx.should_finished()
 
         ctx.receive_event(bot, event2)
-        ctx.should_call_send(event2, "🇨🇳💧👿💧😄👿😁🌶️🐝🈸3️⃣y3️⃣普刚刚说", result=None, bot=bot)
+        ctx.should_call_send(
+            event2, "🇨🇳💧👿💧😄👿😁🌶️🐝🈸3️⃣y3️⃣普刚刚说", result=None, bot=bot
+        )
         ctx.should_finished()
