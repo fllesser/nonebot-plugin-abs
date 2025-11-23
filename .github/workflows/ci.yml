@@ -1,4 +1,4 @@
-name: Code Coverage
+name: CI
 
 on:
   push:
@@ -8,10 +8,30 @@ on:
     paths:
       - "src/**"
       - "tests/**"
+      - ".github/workflows/**"
       - "pyproject.toml"
       - "uv.lock"
 
 jobs:
+  static-type-check:
+    name: BasedPyright
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+          python-version: 3.12
+          version: "latest"
+
+      - name: Install Dependencies
+        run: uv sync --locked
+
+      - name: Static typing check
+        run: uvx basedpyright
+
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -25,7 +45,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.10", "3.11", "3.12", "3.13"]
+        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
         # os: [ubuntu-latest, windows-latest, macos-latest]
 
     env:
@@ -36,14 +56,14 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Install uv and set the python version
+      - name: Setup uv
         uses: astral-sh/setup-uv@v7
         with:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
           version: "latest"
 
-      - name: Install Dependencies for test group
+      - name: Install Dependencies
         run: uv sync --no-dev
 
       - name: Run Pytest
@@ -53,11 +73,11 @@ jobs:
         if: ${{ !cancelled() }}
         uses: codecov/test-results-action@v1
         with:
-          env_vars: PYTHON_VERSION,PYDANTIC_VERSION
+          env_vars: PYTHON_VERSION
           use_oidc: true
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
         with:
-          env_vars: PYTHON_VERSION,PYDANTIC_VERSION
+          env_vars: PYTHON_VERSION
           use_oidc: true
