@@ -1,22 +1,15 @@
 from collections.abc import Sequence
 import re
 
-import jieba_fast as jieba
-from nonebot import get_driver, logger
+from nonebot import logger
 import pinyin
+import rjieba as jieba
 
 from .emoji import en_emj_map, num_emj_map, py_emj_map, zh_emj_map
 
 
-@get_driver().on_startup
-async def init_jieba():
-    import asyncio
-
-    await asyncio.to_thread(jieba.initialize)
-
-
 def text2emoji(text: str) -> str:
-    word_lst: list[str] = jieba.lcut(text)
+    word_lst: list[str] = jieba.cut(text)
     emj_lst: list[str] = []
     for word in word_lst:
         if bool(re.fullmatch(r"^[a-zA-Z0-9]+$", word)):

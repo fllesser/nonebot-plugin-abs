@@ -8,10 +8,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "fllesser", email = "fllessive@gmail.com" }]
 dependencies = [
-  "jieba-fast>=0.53",
   "nonebot-plugin-alconna>=0.59.4,<1.0.0",
   "nonebot2>=2.3.0,<3.0.0",
   "pinyin>=0.4.0",
+  "rjieba>=0.1.13",
 ]
 
 [project.urls]
