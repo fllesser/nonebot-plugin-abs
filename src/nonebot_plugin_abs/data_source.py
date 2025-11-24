@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 import re
 
-import jieba
+import jieba_fast as jieba
 from nonebot import get_driver, logger
 import pinyin
 
