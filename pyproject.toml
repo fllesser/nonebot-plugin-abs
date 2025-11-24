@@ -2,7 +2,7 @@
 
 [project]
 name = "nonebot-plugin-abs"
-version = "1.0.2"
+version = "1.1.0"
 description = "插件描述"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -40,7 +40,7 @@ requires = ["uv_build>=0.9.0"]
 build-backend = "uv_build"
 
 [tool.bumpversion]
-current_version = "1.0.2"
+current_version = "1.1.0"
 commit = true
 message = "release: bump vesion from {current_version} to {new_version}"
 tag = true
